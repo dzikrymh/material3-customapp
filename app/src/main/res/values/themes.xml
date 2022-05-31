@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.CustomApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimaryLight</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryLight</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorPrimaryDark</item>
+        <item name="colorSecondaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:navigationBarColor" tools:targetApi="q">@android:color/transparent</item>
+        <item name="android:statusBarColor" tools:targetApi="q">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="q">?attr/isLightTheme</item>
+
+        <!-- Customize Bottom Nav Bar. -->
+        <!-- container background -->
+        <item name="colorSurface">@color/colorSurfaceLight</item>
+        <!-- label active -->
+        <item name="colorOnSurface">@color/colorSurfaceDark</item>
+        <!-- icon active -->
+        <item name="colorOnSecondaryContainer">@color/colorSurfaceDark</item>
+        <!-- icon & label inactive -->
+        <item name="colorOnSurfaceVariant">@color/black</item>
+        <!-- active indicator -->
+        <item name="colorSecondaryContainer">@color/colorPrimaryLight</item>
+    </style>
+</resources>
