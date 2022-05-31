@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.customapplication.MainActivity
 import com.example.customapplication.R
 
 class ProfileFragment : Fragment() {
@@ -20,6 +21,7 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        MainActivity.animate(true)
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 

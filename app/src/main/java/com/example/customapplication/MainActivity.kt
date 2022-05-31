@@ -6,6 +6,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.customapplication.databinding.ActivityMainBinding
+import com.example.customapplication.ui.profile.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
@@ -36,6 +37,16 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         lateinit var mainActivity: MainActivity
+
+        fun animate(hide: Boolean) {
+            val bottom: BottomNavigationView = mainActivity.findViewById(R.id.nav_view)
+            val moveY = if (hide) 3 * bottom.height else 0
+            bottom.animate()
+                .translationY(moveY.toFloat())
+                .setStartDelay(100)
+                .setDuration(400)
+                .start()
+        }
 
         fun howToOpenDrawer() {
             val drawer: DrawerLayout = mainActivity.findViewById(R.id.drawer_layout)

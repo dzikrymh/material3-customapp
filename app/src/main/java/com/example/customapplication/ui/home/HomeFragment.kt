@@ -33,6 +33,8 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+        MainActivity.animate(false)
+
         return root
     }
 
