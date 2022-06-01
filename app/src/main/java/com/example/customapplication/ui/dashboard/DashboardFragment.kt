@@ -7,8 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.viewpager.widget.ViewPager
 import com.example.customapplication.MainActivity
+import com.example.customapplication.adapter.SectionsPagerAdapter
 import com.example.customapplication.databinding.FragmentDashboardBinding
+import com.google.android.material.tabs.TabLayout
 
 class DashboardFragment : Fragment() {
 
@@ -28,12 +31,13 @@ class DashboardFragment : Fragment() {
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         MainActivity.animate(false)
+
+        val sectionsPagerAdapter = SectionsPagerAdapter(requireContext(), requireActivity().supportFragmentManager)
+        val viewPager: ViewPager = binding.pagers
+        viewPager.adapter = sectionsPagerAdapter
+        val tabs: TabLayout = binding.tabs
+        tabs.setupWithViewPager(viewPager)
 
         return root
     }
