@@ -33,17 +33,22 @@ class DashboardFragment : Fragment() {
         val root: View = binding.root
         MainActivity.animate(false)
 
-        val sectionsPagerAdapter = SectionsPagerAdapter(requireContext(), requireActivity().supportFragmentManager)
-        val viewPager: ViewPager = binding.pagers
-        viewPager.adapter = sectionsPagerAdapter
-        val tabs: TabLayout = binding.tabs
-        tabs.setupWithViewPager(viewPager)
-
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val sectionsPagerAdapter = SectionsPagerAdapter(requireActivity(), requireActivity().supportFragmentManager)
+        binding.pagers.apply {
+            adapter = sectionsPagerAdapter
+            binding.tabs.setupWithViewPager(this)
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.pagers.adapter = null
         _binding = null
     }
 }
